@@ -1,0 +1,15 @@
+{
+  "name": "biet-kich-sam",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Biet Kich Sam (Thunder Commando) - an original run-and-gun shooter for the browser.",
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

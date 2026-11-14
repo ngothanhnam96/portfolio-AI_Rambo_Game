@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d10">
+  <meta name="description" content="Biệt Kích Sấm — game bắn súng màn hình ngang: chạy, nhảy, nằm bắn, ngắm 8 hướng, nhặt vũ khí và hạ ba trùm cơ khí.">
+  <title>Biệt Kích Sấm</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hud hidden" id="hud">
+    <div class="weapon-chip" id="weapon-chip" title="Vũ khí đang dùng">
+      <span class="weapon-letter" id="weapon-letter">S</span>
+      <span class="weapon-name" id="weapon-name">Súng Trường</span>
+    </div>
+
+    <div class="stage-name" id="stage-name"></div>
+
+    <div class="boss" id="boss-bar" hidden>
+      <span class="meter-label" id="boss-name">Trùm</span>
+      <div class="track"><div class="fill boss-fill" id="boss-fill"></div></div>
+    </div>
+
+    <dl class="stats">
+      <div><dt>Mạng</dt><dd id="lives">×3</dd></div>
+      <div><dt>Điểm</dt><dd id="score">0000000</dd></div>
+    </dl>
+
+    <div class="actions">
+      <button class="action" id="pause-btn" title="Tạm dừng (P)" aria-label="Tạm dừng">⏸</button>
+      <button class="action" id="sound-btn" title="Âm thanh (M)" aria-label="Âm thanh" aria-pressed="true">🔊</button>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <canvas id="screen" width="320" height="192" aria-label="Màn chơi"></canvas>
+
+    <div class="touch" id="touch" aria-hidden="true">
+      <div class="dpad" data-dpad>
+        <span data-dir="up">▲</span>
+        <span data-dir="left">◀</span>
+        <span data-dir="right">▶</span>
+        <span data-dir="down">▼</span>
+      </div>
+      <div class="pad">
+        <button data-button="shoot" class="big shoot">Bắn</button>
+        <button data-button="jump" class="big">Nhảy</button>
+      </div>
+    </div>
+  </main>
+
+  <section class="overlay" id="overlay" role="dialog" aria-modal="true">
+    <div class="panel" id="panel"></div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
